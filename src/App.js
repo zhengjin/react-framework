@@ -4,11 +4,13 @@ import FastClick from 'fastclick';
 import logo from './logo.svg';
 import './App.css';
 
+import {isTesting} from './utils/Utils';
+
 class App extends Component{
   componentWillMount() {
-
-    FastClick.attach(document.body);
-
+      if(!isTesting()){
+          FastClick.attach(document.body);
+      }
   }
   render() {
     return (
